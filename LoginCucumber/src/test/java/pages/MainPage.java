@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import io.cucumber.java.en.Then;
  
@@ -18,20 +19,21 @@ private WebDriver driver;
 	}
 	
     
- // Locator for App Logo
-    By AppLogo= By.xpath("//*[@class=\"app_logo\"]");
-    
+
+    // Method to check App logo
     public void verifyAppLogo() {
-    driver.findElements(AppLogo);
-    	
+    WebElement e = driver.findElement(By.xpath("//*[@class=\"app_logo\"]"));
+    Assert.assertNotNull(e);
     }
     
-    // Locator for Main Page Title
-    By MainPageTitle= By.xpath("//span[@class=\"title\"]");
+ 
     
-    // Method to check MainPage Title
+    // Method to check MainPage Title, the PRODUCT LIST TEXT
      public void verifyMainpageTitle() {
-     driver.findElement(MainPageTitle);
+    	 Assert.assertNotNull(driver.findElement(By.xpath("//span[@class=\"title\"]")));
+     }
+        public void verifyUrlIs(String urlToVerify) {
+    	 Assert.assertEquals("Check url", urlToVerify, driver.getCurrentUrl());
      }
     
     }
