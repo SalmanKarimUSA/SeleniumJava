@@ -72,7 +72,8 @@ public class Login {
        	HomePage homePage = new HomePage(driver);
     	String homeTitle =homePage.verifyHomepageTitle();
     	//System.out.println("The error message is ::" + homeTitle);
-		 Assert.assertEquals("Swag Labs", homeTitle);
+	Assert.assertEquals("Swag Labs", homeTitle);
+	driver.close();    
     }
     	
     @When("I fill the account information for account LockedOutUser into the Username field and the Password field")
@@ -87,10 +88,10 @@ public class Login {
     @Then("I verify the Error Message contains the text {string}")
 	public void i_verify_the_error_message_contains_the_text(String string) {
 	 driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3"));
-			//findElement(By.partialLinkText("Sorry, this user has been locked out")).isDisplayed();
-		   
-
-		}
+	 //findElement(By.partialLinkText("Sorry, this user has been locked out")).isDisplayed();
+	 driver.close();
+		
+		   }
     
     
 
