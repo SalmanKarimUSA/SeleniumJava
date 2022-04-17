@@ -15,7 +15,7 @@ import pages.HomePage;
 
 
 
-public class LoginValid {
+public class Login {
  
   	    WebDriver driver =null;
 		
