@@ -85,9 +85,10 @@ public class Login {
     
     @Then("I verify the Error Message contains the text {string}")
 	public void i_verify_the_error_message_contains_the_text(String string) {
-	 
-    	driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3"));
-					   
+    	
+    	 HomePage homePage = new HomePage(driver);
+    	 homePage.errorMessage();
+	 					   
         driver.close();
 	}
     
