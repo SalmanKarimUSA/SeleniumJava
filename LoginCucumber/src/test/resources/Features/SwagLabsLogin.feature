@@ -13,4 +13,4 @@ Feature: As a Swag Labs customer, I need to be able to log in so that I can purc
     And I am on the Sauce Demo Login Page
     When I fill the account information for account LockedOutUser into the Username field and the Password field
     And I click the Login button
-    Then I verify the Error Message contains the text "Sorry, this user has been banned."
+    Then I verify the Error Message contains the text "Epic sadface: Sorry, this"
