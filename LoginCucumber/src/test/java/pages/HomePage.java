@@ -14,21 +14,19 @@ private WebDriver driver;
 	public HomePage(WebDriver driver) {
 			this.driver = driver;
 	}
-	
+	        
  
-         
-    // Locator for User Name
-    By Username = By.xpath("//input[@id='user-name']");
  
     // Locator for Password field
-    By Password= By.xpath("//*[@id=\"password\"]");
+    //By Password= By.xpath("//*[@id=\"password\"]");
  
     // Locator for LogIn Button
-    By LogInButton= By.xpath("//*[@id=\"login-button\"]");
+    //By LogInButton= By.xpath("//*[@id=\"login-button\"]");
  
-    // Locator for find Element
-     By ErrorMessage=By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]");
-     
+    
+    // Locator for User Name
+    //By Username = By.xpath("//input[@id='user-name']"); 
+    
     // Method to type User Name
     public void typeUsername(String Id){
         driver.findElement(By.id("user-name")).sendKeys(Id);
@@ -50,8 +48,11 @@ private WebDriver driver;
      }
     
     
+  // Locator for login Error Message
+     By ErrorMessage=By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]");
+     
     // Method to check ErrorMessge
     public void errorMessage() {
-    	Assert.fail(null);
+    	driver.findElement(ErrorMessage);
     }
 }
